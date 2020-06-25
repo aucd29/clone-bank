@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import brigitte.core.extension.dataBinding
 import io.reactivex.disposables.CompositeDisposable
 
-open class BaseFragment<VB: ViewDataBinding>(
+abstract class BaseFragment<VB: ViewDataBinding>(
     @LayoutRes private val layoutId: Int
 ) : Fragment() {
     protected val disposable = CompositeDisposable()
@@ -22,6 +22,7 @@ open class BaseFragment<VB: ViewDataBinding>(
         savedInstanceState: Bundle?
     ): View? {
         binding = dataBinding(layoutId)
+        binding.lifecycleOwner = viewLifecycleOwner
 
         return binding.root
     }

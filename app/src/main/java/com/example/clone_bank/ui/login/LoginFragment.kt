@@ -1,17 +1,14 @@
-package com.example.clone_bank.ui.more
+package com.example.clone_bank.ui.login
 
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.viewModels
 import brigitte.core.BaseFragment
 import com.example.clone_bank.R
-import com.example.clone_bank.databinding.FragmentMoreBinding
+import com.example.clone_bank.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MoreFragment : BaseFragment<FragmentMoreBinding>(R.layout.fragment_more) {
-    private val viewmodel: MoreViewModel by viewModels()
-
+class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
