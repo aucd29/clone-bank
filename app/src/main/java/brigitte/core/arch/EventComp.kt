@@ -12,6 +12,9 @@ interface EventInterface {
     fun sendEvent(key: Int)
 }
 
+/**
+ * viewmodel 에서 composite 형태로 추가 해서 사용
+ */
 class EventComp @Inject constructor() : EventInterface {
     private val _event = MutableLiveData<Event<Pair<Int, Any?>>>()
     override val event: LiveData<Event<Pair<Int, Any?>>> = _event
@@ -25,8 +28,11 @@ class EventComp @Inject constructor() : EventInterface {
     }
 }
 
+/**
+ * activity/fragment 에서 composite 형태로 추가해서 사용
+ */
 class EventProcess @Inject constructor() {
-    fun bindViewModel(lifecycleOwner: LifecycleOwner, viewModel: ViewModel) {
+    fun observeEvent(lifecycleOwner: LifecycleOwner, viewModel: ViewModel) {
         if (viewModel is EventInterface) {
             viewModel.event.observe(lifecycleOwner, EventObserver {
                 onEvent(it.first, it.second)

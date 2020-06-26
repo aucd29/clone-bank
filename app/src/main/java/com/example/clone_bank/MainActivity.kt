@@ -10,6 +10,7 @@ import androidx.navigation.ui.setupWithNavController
 import brigitte.core.BaseActivity
 import com.example.clone_bank.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -20,9 +21,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val navController = findNavController(R.id.nav_host_fragment)
+        Timber.d("HELLO MAIN ACTIVITY")
 
-        setupActionBarWithNavController(navController, appBarConfig)
-        binding.navView.setupWithNavController(navController)
+//        val navController = findNavController(R.id.nav_host_fragment)
+//
+//        setupActionBarWithNavController(navController, appBarConfig)
+//        binding.navView.setupWithNavController(navController)
     }
 }
