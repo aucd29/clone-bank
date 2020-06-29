@@ -1,0 +1,2 @@
+package brigitte.core.extension
+
