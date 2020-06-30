@@ -6,17 +6,6 @@ import timber.log.Timber
 import javax.inject.Inject
 
 class MainViewModel @ViewModelInject constructor(
-    var t: TestInterface
 ) : ViewModel() {
-
-//    @Inject lateinit var t: TestInterface
-
-    init {
-        Timber.d("init")
-    }
-
-    fun onTest() {
-        t.test()
-    }
 
 }
